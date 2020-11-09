@@ -1,0 +1,101 @@
+ LCModel (Version 6.3-1L)
+ Slice#2 Row#5 Col#2  PD_05_press_1_raw_act
+
+$$CONC 36 lines in following concentration table = NCONC+1
+    Conc.  %SD /Cr+PCr  Metabolite                                         
+   24.404 114%   0.439 Ala                                                 
+    9.908  32%   0.178 Asp                                                 
+    3.645 999% 6.6E-02 Cr                                                  
+   51.881  72%   0.934 PCr                                                 
+    6.010  31%   0.108 GABA                                                
+    5.999  31%   0.108 Glc                                                 
+   58.304  94%   1.050 Gln                                                 
+   52.753 113%   0.950 Glu                                                 
+    8.814 337%   0.159 GPC                                                 
+   11.481 261%   0.207 PCh                                                 
+    0.000 999%   0.000 GSH                                                 
+    0.000 999%   0.000 Ins                                                 
+   22.585 132%   0.407 Lac                                                 
+   84.126  23%   1.515 NAA                                                 
+    0.000 999%   0.000 NAAG                                                
+    1.998  32% 3.6E-02 Scyllo                                              
+   10.080  31%   0.182 Tau                                                 
+    5.313  64% 9.6E-02 -CrCH2                                              
+   20.295  31%   0.366 GPC+PCh                                             
+   84.126  23%   1.515 NAA+NAAG                                            
+   55.526  31%   1.000 Cr+PCr                                              
+  111.057  69%   2.000 Glu+Gln                                             
+    0.000 999%   0.000 Lip13a                                              
+    0.000 999%   0.000 Lip13b                                              
+ 4.27E-04 999% 7.7E-06 Lip09                                               
+   65.688 106%   1.183 MM09                                                
+ 5.88E-06 999% 1.1E-07 Lip20                                               
+   40.505 275%   0.729 MM20                                                
+   11.201 255%   0.202 MM12                                                
+  101.145  80%   1.822 MM14                                                
+   72.771  79%   1.311 MM17                                                
+    0.000 999%   0.000 Lip13a+Lip13b                                       
+  112.346  86%   2.023 MM14+Lip13a+Lip13b+MM12                             
+   65.688 106%   1.183 MM09+Lip09                                          
+   40.505 275%   0.729 MM20+Lip20                                          
+
+$$MISC  6 lines in following misc. output table
+  FWHM = 0.038 ppm    S/N =   1                                            
+  Data shift =-0.038 ppm                                                   
+  Ph:  85 deg      -7.6 deg/ppm                                            
+  alphaB,S = 3.9E-01,   2.0E+01                                            
+   14 spline knots.   Ns = 5(1)                                            
+   2 inflections.     1 extrema                                            
+
+$$DIAG  2 lines in following diagnostic table:
+   1 info      STARTV 20                                                  
+   1 info      TWOREG  8                                                  
+
+$$INPU 47 lines in following table of input changes:
+ deltat= 5.000e-04                                                        
+ echot= 52.29                                                             
+ filbas= '/home/compimglab/.lcmodel/basis-sets/ga                         
+   mma_press_te52_128mhz_627d.basis'                                      
+ filcoo= '/home/compimglab/Desktop/MultivoxelScri                         
+   pt/Patients/PD_05/exam_1/spectra/lcmodel_outpu                         
+   ts/press_1/PD_05_press_1_raw_act.coord'                                
+ filcsv= '/home/compimglab/Desktop/MultivoxelScri                         
+   pt/Patients/PD_05/exam_1/spectra/lcmodel_outpu                         
+   ts/press_1/PD_05_press_1_raw_actiterslice2.csv                         
+   '                                                                      
+ filpri= '/home/compimglab/Desktop/MultivoxelScri                         
+   pt/Patients/PD_05/exam_1/spectra/lcmodel_outpu                         
+   ts/press_1/PD_05_press_1_raw_act.print'                                
+ filps= '/home/compimglab/Desktop/MultivoxelScrip                         
+   t/Patients/PD_05/exam_1/spectra/lcmodel_output                         
+   s/press_1/PD_05_press_1_raw_act.ps'                                    
+ filraw= '/home/compimglab/Desktop/MultivoxelScri                         
+   pt/Patients/PD_05/exam_1/spectra/lcmodel_outpu                         
+   ts/press_1/met/RAW'                                                    
+ filtab= '/home/compimglab/Desktop/MultivoxelScri                         
+   pt/Patients/PD_05/exam_1/spectra/lcmodel_outpu                         
+   ts/press_1/PD_05_press_1_raw_act.table'                                
+ hzpppm= 1.2777e+02                                                       
+ icolen= 14                                                               
+ icolst= 1                                                                
+ irowen= 14                                                               
+ irowst= 1                                                                
+ islice= 2                                                                
+ lcoord= 9                                                                
+ lcsv= 11                                                                 
+ lprint= 6                                                                
+ lps= 8                                                                   
+ ltable= 7                                                                
+ ndcols= 14                                                               
+ ndrows= 14                                                               
+ ndslic= 3                                                                
+ neach= 99                                                                
+ nunfil= 1024                                                             
+ ppmend= 0.2                                                              
+ ppmst= 4.0                                                               
+ savdir= '/home/compimglab/Desktop/MultivoxelScri                         
+   pt/Patients/PD_05/exam_1/spectra/lcmodel_outpu                         
+   ts/press_1/saved'                                                      
+ srcraw= '/home/compimglab/Desktop/MultivoxelScri                         
+   pt/Patients/PD_05/exam_1/spectra/PD_05_press_1                         
+   _raw_act.sdat'                                                         
