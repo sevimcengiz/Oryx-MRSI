@@ -1,10 +1,9 @@
-%changes parameters name from ap to FOV
 
 function [Pinfo] = Mask_FOV_run_Pinfo_little(Pinfo,sli,row,col,met,littleFOVMask_file,chem_shift_ex,chem_shift_echo,chem_shift_echo2)
 
 nii=Pinfo.MRI;
 [pathnii,namenii,extnii] = fileparts(nii);
-gunzip(nii,pathnii)
+gunzip(nii,pathnii);
 nii_file=[pathnii,filesep,namenii];
 
 V=spm_vol(nii_file);
@@ -31,9 +30,12 @@ ap_ang = Pinfo.voxangap;
 lr_ang = Pinfo.voxanglr;
 cc_ang = Pinfo.voxangcc;
 [offcenter]=Pinfo.littlevoxels(sli,row,col).loc;
-cc_off = offcenter(:,1)+chem_shift_echo2;
+
 ap_off = offcenter(:,2)+chem_shift_ex;
 lr_off = offcenter(:,3)+chem_shift_echo;
+cc_off = offcenter(:,1)+chem_shift_echo2;
+
+
 
 
 %We need to flip ap and lr axes to match NIFTI convention
@@ -121,7 +123,7 @@ V_mask.dim=V.dim;
 V_mask.dt=V.dt;
 V_mask.mat=V.mat;
 
-% V_mask=spm_write_vol(V_mask,mask);  % uncomment if you want to save
+%  V_mask=spm_write_vol(V_mask,mask);  % uncomment if you want to save
 % little voxels
 
 Pinfo.metab(met).littlevoxels(sli,row,col).name=littleFOVMask_file;

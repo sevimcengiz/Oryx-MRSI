@@ -5,7 +5,7 @@ function [Pinfo] = Mask_FOV_run_Pinfo(Pinfo,k,MRIFOVMask_file,chem_shift_ex,chem
 nii=Pinfo.MRI;
 
 [pathnii,namenii,extnii] = fileparts(nii);
-gunzip(nii,pathnii)
+gunzip(nii,pathnii);
 nii_file=[pathnii,filesep,namenii];
 
 V=spm_vol(nii_file);
@@ -124,7 +124,8 @@ V_mask.dt=V.dt;
 V_mask.mat=V.mat;
 
 V_mask=spm_write_vol(V_mask,mask);
-% Pinfo.FOVmask=mask;  %ileride Lazim olabilir
+
+
 
 %%%%New Figureee
 
@@ -144,9 +145,11 @@ size_max=max(size(MRIimg_mas));
 three_plane_img=zeros([size_max 3*size_max]);
 im1 = squeeze(MRIimg_mas(:,:,slice(3)));
 im1 = im1(end:-1:1,:)'; 
-im1=flipdim(im1 ,1); 
+im1 = flipdim(im1 ,1); 
+im1 = flipdim(im1,2);
 im3 = squeeze(MRIimg_mas(:,slice(2),:));
 im3 = im3(end:-1:1,end:-1:1)'; 
+im3 = flipdim(im3,2);
 im2 = squeeze(MRIimg_mas(slice(1),:,:));
 im2 = im2(:,end:-1:1)';
 
@@ -164,9 +167,11 @@ MRIimg22 = MRIimg2 + .2*MRIimg2;
 three_plane_img2=zeros(size(three_plane_img));
 im11 = squeeze(MRIimg22(:,:,slice(3)));
 im11 = im11(end:-1:1,:)'; 
-im11=flipdim(im11 ,1); 
+im11 = flipdim(im11 ,1); %vertical mirror (Now; up is Anterior, down is Posterior)
+im11 = flipdim(im11,2); %horizantal mirror (Now: right left display)
 im33 = squeeze(MRIimg22(:,slice(2),:));
 im33 = im33(end:-1:1,end:-1:1)'; 
+im33 = flipdim(im33,2); %horizantal mirror (Now: right left display)
 % im33=flipdim(im33,2); 
 im22 = squeeze(MRIimg22(slice(1),:,:));
  im22 = im22(:,end:-1:1)';
@@ -176,6 +181,8 @@ three_plane_img2(:,1:size_max) = image_center(im11, size_max);
 three_plane_img2(:,size_max*2+(1:size_max))=image_center(im33,size_max);
 three_plane_img2(:,size_max+(1:size_max))=image_center(im22,size_max);
 Pinfo.refimg.fig=three_plane_img2; %Ref MRI image save
+
+
 end
 end
 

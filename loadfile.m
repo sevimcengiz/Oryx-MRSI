@@ -1,4 +1,4 @@
-function [Pinfo]= loadfile()
+function [Pinfo]= loadfile(filename,pathname)
 % It asks user to select a .spar file path to creates Pinfo struct. 
 
 % Pinfo = struct
@@ -33,7 +33,9 @@ function [Pinfo]= loadfile()
 % Sevim Cengiz, Bogazici University, Turkey (2020-11-27)
 % sevim_cengiz@icloud.com 
 
-[filename, pathname] = uigetfile('*.spar', 'Pick a .spar file ');
+% [filename, pathname] = uigetfile('*.spar', 'Pick a .spar file ');
+% [fpath,fname,extfile] = fileparts([pathname,filename]);
+
 [fpath,fname,extfile] = fileparts([pathname,filename]);
 sparfilepath=[fpath,filesep,fname];
 coordfilespath= [fpath,filesep,'lcmodel_outputs',filesep,fname,filesep];

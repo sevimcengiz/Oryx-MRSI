@@ -3,7 +3,7 @@ function [Pinfo] = Mask_Press_run_Pinfo(Pinfo,k,MRIPressMask_file,chem_shift_ex,
 
 nii=Pinfo.MRI;
 [pathnii,namenii,extnii] = fileparts(nii);
-gunzip(nii,pathnii)
+gunzip(nii,pathnii);
 nii_file=[pathnii,filesep,namenii];
 
 V=spm_vol(nii_file);

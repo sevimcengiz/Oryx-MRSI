@@ -1,4 +1,4 @@
-function CoordfilesVisual(Pinfo)
+function [allvoxels]=GUI_MV_coordreader(Pinfo)
 % it reads multivoxel LCModel coord files and visualize them considering
 % slice, row and column numbers. 
 % LCmodel outputs are named according to the columns are increasing from R to L and the rows are increasing from A to P. 
@@ -29,34 +29,4 @@ for slice=1:nslice
         end
     end
     
-end
-
-[P_subplot,P_fig,P_colorbar] = subplot_position(300,300,nrow,ncol,1);
-
-
-for selectedsli=1:nslice
-    
-    figure;
-    se=1;
-    for row=1:nrow %row
-        for col=1:ncol %column
-            flat_x_ppm(se,:)=allvoxels(selectedsli,row,col).x_ppm;
-            flat_spectra(se,:,1)= allvoxels(selectedsli,row,col).spectra(:,1);
-            flat_spectra(se,:,2)= allvoxels(selectedsli,row,col).spectra(:,2);
-            flat_spectra(se,:,3)= allvoxels(selectedsli,row,col).spectra(:,3);
-            se=se+1;
-        end
-    end
-%     f=waitbar(0,'Plotting...');
-    for sp=1:(nrow*ncol)
-%         waitbar(sp/(nrow*ncol),f,sprintf('%.2f percent of spectra plotted',100*(sp/(nrow*ncol))));
-        a=subplot('position',P_subplot{sp});
-        plot(flat_x_ppm(sp,:),squeeze(flat_spectra(sp,:,:)));
-        set(gca,'XDir','reverse');
-        set(gca,'XTickLabel',[])
-        set(gca,'XTick',[])
-        set(gca,'YTick',[])
-    end
-%     close(f);
-end
 end
