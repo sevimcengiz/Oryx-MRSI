@@ -4,11 +4,11 @@ Clinic multivoxel 1H-MRSI analysis software
 <img src="https://user-images.githubusercontent.com/5468765/108315274-9c0c7680-71d4-11eb-9040-7e6248ea55b8.png" width="100" height="100">
 
 # Prerequiretes 
-[MATLAB R2020a](https://www.fil.ion.ucl.ac.uk/spm/software/download/)
-[FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSL) for FLIRT 
-[SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/download/)
-[GUI Layout Toolbox] (https://www.mathworks.com/matlabcentral/fileexchange/47982-gui-layout-toolbox)
-[Widgets Toolbox] (https://www.mathworks.com/matlabcentral/fileexchange/66235-widgets-toolbox-compatibility-support)
+- [MATLAB R2020a](https://www.fil.ion.ucl.ac.uk/spm/software/download/)
+- [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSL) for FLIRT 
+- [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/download/)
+- [GUI Layout Toolbox] (https://www.mathworks.com/matlabcentral/fileexchange/47982-gui-layout-toolbox)
+- [Widgets Toolbox] (https://www.mathworks.com/matlabcentral/fileexchange/66235-widgets-toolbox-compatibility-support)
 
 # Installation
 
