@@ -8,9 +8,9 @@ Oryx-MRSI is a fully automated software for a comprehensive clinic 3D multivoxel
  a. exclusion criteria for fCSF, SNR, FWHM, CRLB b. RF bandwidhth of the system for chemical shift correction c. cut-off value for the probabilistic binary map after registration
 
 - ```Load Data``` Reads the raw 1H-MRSI data and LCModel otput files for raw data and Coord file visualization of spectra.
-- 
+
 - ```Co-registration``` Coregisters FOV,Press-Box(VOI), all voxels of spectra considering chemical shift correction if chemical shift correction is 'On'.
-- 
+
 - ```Segmentation``` Calculation of WM, GM, CSF fractions in each voxel of all metabolites considering chemical shift correction. 
 
 - ```FWHM-SNR``` Visualization of FWHM and SNR values for all voxels
@@ -25,8 +25,7 @@ Oryx-MRSI is a fully automated software for a comprehensive clinic 3D multivoxel
 
 - ```Registration``` Generates MNI-Registered metabolite maps including the outputs created in the previous module.
 
-- ```ROI Analysis``` Region of interest (ROI) analysis at multiple brain atlases like Schafer2018 100/400 Parcels on 7 resting-state (rs-fMRI) networks[*](https://pubmed.ncbi.nlm.nih.gov/28981612/) or MNI thr 0/25/50 brain regions[*]
-(https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases). 
+- ```ROI Analysis``` Region of interest (ROI) analysis at multiple brain atlases like Schafer2018 100/400 Parcels on 7 resting-state (rs-fMRI) networks[*](https://pubmed.ncbi.nlm.nih.gov/28981612/) or MNI thr 0/25/50 brain regions[*](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases). 
 
 
 # Prerequiretes 
