@@ -39,7 +39,8 @@ Oryx-MRSI is a fully automated software for a comprehensive clinic 3D multivoxel
 # Installation
 Download Oryx-MRSI,
 
-Addpath with subfolders SPM12
+Addpath with subfolders SPM12.
+
 Please make sure that FSL usage from Matlab command window installation is completed properly.
 
 Befor using Oryx-MRSI, please open matlab and run ```check_fsl_usage_from_matlab.m``` script which is given under Oryx-MRSI Github repo.
