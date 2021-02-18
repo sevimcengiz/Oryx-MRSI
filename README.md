@@ -4,8 +4,13 @@ Oryx-MRSI is a fully automated software for a comprehensive clinic 3D multivoxel
 
 # Features
 - ```Main Page``` The user needs to provide parameters for the 3D multivoxel 1H-MRSI data.
--  Required parameters: 
- a. exclusion criteria for fCSF, SNR, FWHM, CRLB b. RF bandwidhth of the system for chemical shift correction c. cut-off value for the probabilistic binary map after registration
+  Required parameters: 
+ 
+   a. exclusion criteria for fCSF, SNR, FWHM, CRLB 
+ 
+   b. RF bandwidhth of the system for chemical shift correction 
+ 
+   c. cut-off value for the probabilistic binary map after registration
 
 - ```Load Data``` Reads the raw 1H-MRSI data and LCModel otput files for raw data and Coord file visualization of spectra.
 
@@ -18,10 +23,10 @@ Oryx-MRSI is a fully automated software for a comprehensive clinic 3D multivoxel
 - ```Included Voxels``` Visualization of included voxels into the 1H-MRSI data analysis after exclusion criteria values considering FWHM, SNR, CRLB, and fCSF. 
 
 - ```Metabolite Map``` All metabolite results are used to create metabolite maps including: 
-- concentration map,
-- concentation map to Ins or Cr+PCr ratio 
-- CSF corrected concentration map, 
-- CSF corrected concentration map to Ins or Cr+PCr ratio.
+  - concentration map,
+  - concentation map to Ins or Cr+PCr ratio 
+  - CSF corrected concentration map, 
+  - CSF corrected concentration map to Ins or Cr+PCr ratio.
 
 - ```Registration``` Generates MNI-Registered metabolite maps including the outputs created in the previous module.
 
