@@ -46,7 +46,9 @@ Intel HD Graphics 630 1536 MB ) and Ubuntu 18.04.4 LTS (Memory 32GIB, Processor 
 Oryx-MRSI uses FSL-Flirt function so using FSL from MATLAB should be ready. 
 
 If you want to install FSL into your computer, check [this link](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation)
+
 If you use ```MAC```, check [this link](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation/MacOsX) (Advance Usage part-Using FSL from MATLAB)
+
 If you use ```LINUX```, check [this link](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation/Linux) (Using FSL from MATLAB)
 
 Plase download SPM12 using [this link](https://www.fil.ion.ucl.ac.uk/spm/software/download/)
