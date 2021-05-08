@@ -73,7 +73,8 @@ If you get an error, plese check these:
    If you use ```LINUX```, check [this link](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation/Linux) (Using FSL from MATLAB)
 
 # How to get started
-
+[Oryx-MRSI Documentation](https://sevimcengiz.github.io/oryx/)
+ 
 # Release
 - Version 1.0
 
