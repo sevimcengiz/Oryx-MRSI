@@ -1,18 +1,28 @@
 # Oryx-MRSI
 <img src="https://user-images.githubusercontent.com/5468765/108315274-9c0c7680-71d4-11eb-9040-7e6248ea55b8.png" width="100" height="100">
-Oryx-MRSI is a fully automated and complemental software for a comprehensive multi-slice proton magnetic resonance spectroscopic imaging (1H-MRSI) data analysis considering multi-slice MRSI raw data and .coord file outputs visualization, tissue fraction calculation, chemical shift correction, registration onto MNI152 brain atlas, and atlas-based ROI analysis. 
+Oryx-MRSI is a fully automated and complemental software for a comprehensive multi-slice proton magnetic resonance spectroscopic imaging (1H-MRSI) data analysis. It includes multi-slice MRSI raw data and .coord file outputs visualization, tissue fraction calculation, chemical shift correction, metabolite maps generation, registration onto MNI152 brain atlas, and atlas-based ROI analysis.
 
 # Features
 - ```Main Page``` The user needs to provide parameters for the multi-slice 1H-MRSI data.
   Required parameters: 
  
-   a. exclusion criteria for fCSF, SNR, FWHM, CRLB 
+   a. Exclusion criteria for fCSF, SNR, FWHM, CRLB 
  
    b. RF bandwidhth of the system for chemical shift correction 
  
-   c. cut-off value for the probabilistic binary map after registration
+   c. Cut-off value for the probabilistic binary map after registration
    
-   d......Yaz Bunlari
+   d. Chemical shift correction is ```On``` or ```Off```
+   
+   e. RFOV dir is ```RL``` or ```AP```
+   
+   f. Chemical shift dir (AP) is ```A``` or ```P```
+   
+   g. Chemical shift dir (LR) is ```L``` or ```R```
+   
+   h. Chemical shift dir (FH) is ```F``` or ```H```
+   
+   i. Reference metabolite
 
 - ```Load Data``` Reads the raw 1H-MRSI data and LCModel .coord otput files for raw data and Coord file visualization of spectra.
 
