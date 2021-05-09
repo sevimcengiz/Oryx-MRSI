@@ -92,8 +92,11 @@ If you get an error, plese check these:
 # Developers
 
 Sevim Cengiz
+
 Muhammed Yildirim
+
 Abdullah Bas
+
 Esin Ozturk Isik
 
 Should you publish material that made use of Oryx-MRSI, please cite the following publication:
