@@ -1,6 +1,6 @@
 # Oryx-MRSI
 <img src="https://user-images.githubusercontent.com/5468765/108315274-9c0c7680-71d4-11eb-9040-7e6248ea55b8.png" width="100" height="100">
-Oryx-MRSI is a fully automated and complimentary software for a comprehensive multi-slice proton magnetic resonance spectroscopic imaging (1H-MRSI) data analysis by considering multi-slice MRSI raw data and .coord file outputs visualization, tissue fraction calculation, chemical shift correction, registration onto MNI152 brain atlas, and atlas-based ROI analysis. 
+Oryx-MRSI is a fully automated and complemental software for a comprehensive multi-slice proton magnetic resonance spectroscopic imaging (1H-MRSI) data analysis considering multi-slice MRSI raw data and .coord file outputs visualization, tissue fraction calculation, chemical shift correction, registration onto MNI152 brain atlas, and atlas-based ROI analysis. 
 
 # Features
 - ```Main Page``` The user needs to provide parameters for the multi-slice 1H-MRSI data.
@@ -37,7 +37,7 @@ Oryx-MRSI is a fully automated and complimentary software for a comprehensive mu
 - ```ROI Analysis``` Region of interest (ROI) analysis at multiple brain atlases like [Schafer2018 100/400 Parcels on 7 resting-state (rs-fMRI) networks](https://pubmed.ncbi.nlm.nih.gov/28981612/) or [MNI thr 0/25/50 brain regions](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases). 
 
 
-# Prerequiretes 
+# Prerequirements
 - [MATLAB R2020b](https://www.fil.ion.ucl.ac.uk/spm/software/download/)
 - [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSL) for FLIRT 
 - [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/download/)
