@@ -116,7 +116,7 @@ Should you publish material that made use of Oryx-MRSI, please cite the followin
 - If you support or contribute the code, most welcome to Oryx-MRSI Github Repository.
 
 # License
-- Apache-2.0 License
+- MIT License
 
 # Acknowledgement
 - This project was funded by TUBITAK 115S219. We thank all open-source MR and MRS tools. 
