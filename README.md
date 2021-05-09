@@ -1,3 +1,7 @@
+[![Website monip.org](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)](https://sevimcengiz.github.io/)
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://sevimcengiz.github.io/oryx/)
+![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/sevimcengiz)
 # Oryx-MRSI
 <img src="https://user-images.githubusercontent.com/5468765/108315274-9c0c7680-71d4-11eb-9040-7e6248ea55b8.png" width="100" height="100">
 Oryx-MRSI is a fully automated and complemental software for a comprehensive multi-slice proton magnetic resonance spectroscopic imaging (1H-MRSI) data analysis. It includes multi-slice MRSI raw data and .coord file outputs visualization, tissue fraction calculation, chemical shift correction, metabolite maps generation, registration onto MNI152 brain atlas, and atlas-based ROI analysis.
