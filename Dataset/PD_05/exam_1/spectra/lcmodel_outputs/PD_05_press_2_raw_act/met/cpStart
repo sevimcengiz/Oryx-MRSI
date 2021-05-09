@@ -1,9 +1,0 @@
-ndrows=  12
-title= 'PD_MCI (2015.12.17 14:50:23) ------------- (------------) 3.60e+00 mL, TE/TR/NS=52/1000/1 (s3D_PRESS_144)'
-filraw= '/home/compimglab/Desktop/MultivoxelScript/Patients/PD_05/exam_1/spectra/lcmodel_outputs/press_2/met/RAW'
-filps= '/home/compimglab/Desktop/MultivoxelScript/Patients/PD_05/exam_1/spectra/lcmodel_outputs/press_2/ps'
-hzpppm=  1.2775e+02
-deltat= 5.000e-04
-nunfil=  1024
-ndcols=  12
-ndslic=  3

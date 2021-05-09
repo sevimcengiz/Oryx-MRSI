@@ -1,0 +1,9 @@
+ndrows=  14
+title= 'PD_MCI (2016.03.23 14:35:42) -------------- (------------) 3.60e+00 mL, TE/TR/NS=52/1000/1 (s3D_PRESS_144_1)'
+filraw= '/home/compimglab/Desktop/MultivoxelScript/Patients/K_02/exam_1/spectra/lcmodel_outputs/press_1/met/RAW'
+filps= '/home/compimglab/Desktop/MultivoxelScript/Patients/K_02/exam_1/spectra/lcmodel_outputs/press_1/ps'
+hzpppm=  1.2777e+02
+deltat= 5.000e-04
+nunfil=  1024
+ndcols=  14
+ndslic=  3

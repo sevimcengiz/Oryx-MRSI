@@ -18,7 +18,7 @@ function [sig,Fe,Fref,B0]=Multivoxel_readPhilips_Sdat(rootname);
 Fe=1000/DW;
 Fref=TF;
 B0 = TF * 4.6975 / (200 * 1E6);
-fid=fopen(strcat((rootname),'.SDAT'),'r','ieee-le');
+fid=fopen(strcat((rootname),'.sdat'),'r','ieee-le');
 raw=freadVAXG(fid,nbPts*nbSignals*nslice*2,'float32');
 
 if(nrow*ncol>1)

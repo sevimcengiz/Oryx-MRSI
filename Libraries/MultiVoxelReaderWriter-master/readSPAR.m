@@ -51,10 +51,10 @@ function [DW,TF,nbPts,nbSignals,nrow,ncol,nslice]=readSPAR(rootname)
             end
             if(strcmp(text{j},'spec_num_row'))
                
-                nbSignals=str2num(text{j+2})
+                nbSignals=str2num(text{j+2});
 
                 if(nbSignals>1)
-                    csi=1
+                    csi=1;
                 else
                 csi=0;
                 end
@@ -65,11 +65,11 @@ function [DW,TF,nbPts,nbSignals,nrow,ncol,nslice]=readSPAR(rootname)
     
       %the Magnetic Field B0 for 1H nucleus
       if(strcmp(nucleus,'1H'))
-              B0 = TF * 4.6975 / (200 * 1E6)
+              B0 = TF * 4.6975 / (200 * 1E6);
       end
            %     input('ok')     
       if(csi==1)
-          
+          nslice=1;
           for j=1:length(text)
              if(strcmp(text{j},'dim3_pnts'))
               ncol=str2num(text{j+2});
@@ -79,9 +79,11 @@ function [DW,TF,nbPts,nbSignals,nrow,ncol,nslice]=readSPAR(rootname)
               nrow=str2num(text{j+2});
              end
              
+
              if(strcmp(text{j},'dim4_pnts'))
               nslice=str2num(text{j+2});
              end
+ 
           end
           
           else
