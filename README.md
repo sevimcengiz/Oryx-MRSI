@@ -89,6 +89,17 @@ If you get an error, plese check these:
 # How to get started and User Documentation
 [Oryx-MRSI Documentation](https://sevimcengiz.github.io/oryx/)
 
+# Developers
+
+Sevim Cengiz
+Muhammed Yildirim
+Abdullah Bas
+Esin Ozturk Isik
+
+Should you publish material that made use of Oryx-MRSI, please cite the following publication:
+
+**Cengiz S, Yildirim M, Bas A, Ozturk-Isik E. ORYX-MRSI: A data analysis software for multi-slice 1H-MRSI. International Society for Magnetic Resonance in Medicine. Virtual Meeting, May 15-20, 2021. (Digital Poster)**
+
 # Release
 - Version 1.0
 
