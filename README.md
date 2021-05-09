@@ -1,9 +1,9 @@
 # Oryx-MRSI
 <img src="https://user-images.githubusercontent.com/5468765/108315274-9c0c7680-71d4-11eb-9040-7e6248ea55b8.png" width="100" height="100">
-Oryx-MRSI is a fully automated software for a comprehensive clinic 3D multivoxel proton magnetic resonance spectroscopic imaging (1H-MRSI) data analysis from the top on down. 
+Oryx-MRSI is a fully automated and complimentary software for a comprehensive multislice proton magnetic resonance spectroscopic imaging (1H-MRSI) data analysis by considering multi-slice MRSI raw data and coord file outputs visualization, tissue fraction calculation, chemical shift correction, registration onto MNI152 brain atlas, and atlas based MRSI ROI analysis. 
 
 # Features
-- ```Main Page``` The user needs to provide parameters for the 3D multivoxel 1H-MRSI data.
+- ```Main Page``` The user needs to provide parameters for the multi-slice 1H-MRSI data.
   Required parameters: 
  
    a. exclusion criteria for fCSF, SNR, FWHM, CRLB 
@@ -11,30 +11,34 @@ Oryx-MRSI is a fully automated software for a comprehensive clinic 3D multivoxel
    b. RF bandwidhth of the system for chemical shift correction 
  
    c. cut-off value for the probabilistic binary map after registration
+   
+   d......Yaz Bunlari
 
-- ```Load Data``` Reads the raw 1H-MRSI data and LCModel otput files for raw data and Coord file visualization of spectra.
+- ```Load Data``` Reads the raw 1H-MRSI data and LCModel .coord otput files for raw data and Coord file visualization of spectra.
 
 - ```Co-registration``` Coregisters FOV,Press-Box(VOI), all voxels of spectra considering chemical shift correction if chemical shift correction is 'On'.
 
 - ```Segmentation``` Calculation of WM, GM, CSF fractions in each voxel of all metabolites considering chemical shift correction. 
 
-- ```FWHM-SNR``` Visualization of FWHM and SNR values for all voxels
+- ```FWHM-SNR``` Visualization of FWHM and SNR values for all voxels.
 
-- ```Included Voxels``` Visualization of included voxels into the 1H-MRSI data analysis after exclusion criteria values considering FWHM, SNR, CRLB, and fCSF. 
+- ```Spectral Quality``` Visualization of included voxels into the 1H-MRSI data analysis after exclusion criteria values considering FWHM, SNR, CRLB, and fCSF. 
 
 - ```Metabolite Map``` All metabolite results are used to create metabolite maps including: 
   - concentration map,
-  - concentation map to Ins or Cr+PCr ratio 
+  - concentration map to Ins ratio, 
+  - concentration map to Cr+PCr ratio,
   - CSF corrected concentration map, 
-  - CSF corrected concentration map to Ins or Cr+PCr ratio.
+  - CSF corrected concentration map to Ins ratio,
+  - CSF corrected concentration map to Cr+PCr ratio.
 
-- ```Registration``` Generates MNI-Registered metabolite maps including the outputs created in the previous module.
+- ```Registration``` Generates MNI152 brain atlas-Registered metabolite maps including the outputs created in the previous module.
 
-- ```ROI Analysis``` Region of interest (ROI) analysis at multiple brain atlases like Schafer2018 100/400 Parcels on 7 resting-state (rs-fMRI) networks[*](https://pubmed.ncbi.nlm.nih.gov/28981612/) or MNI thr 0/25/50 brain regions[*](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases). 
+- ```ROI Analysis``` Region of interest (ROI) analysis at multiple brain atlases like [Schafer2018 100/400 Parcels on 7 resting-state (rs-fMRI) networks](https://pubmed.ncbi.nlm.nih.gov/28981612/) or [MNI thr 0/25/50 brain regions](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases). 
 
 
 # Prerequiretes 
-- [MATLAB R2020a](https://www.fil.ion.ucl.ac.uk/spm/software/download/)
+- [MATLAB R2020b](https://www.fil.ion.ucl.ac.uk/spm/software/download/)
 - [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSL) for FLIRT 
 - [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/download/)
 - [GUI Layout Toolbox](https://www.mathworks.com/matlabcentral/fileexchange/47982-gui-layout-toolbox)
@@ -72,20 +76,16 @@ If you get an error, plese check these:
     
    If you use ```LINUX```, check [this link](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation/Linux) (Using FSL from MATLAB)
 
-# How to get started
+# How to get started and User Documentation
 [Oryx-MRSI Documentation](https://sevimcengiz.github.io/oryx/)
- 
+
 # Release
 - Version 1.0
 
-# User Documentation
-- Please, read the documentation in the Github Repository. 
-- [Oryx-MRSI Documentation](http://sevimcengiz.github.io/)
-
 # Help and Support
 - There isn't known any bug or issue up to now. 
-- If you see any bug or issue, please contact: sevim_cengiz@icloud.com
-- If you support or contribute the code, please contact: sevim_cengiz@icloud.com
+- If you see any bug or issue, please  submit a topic in issues, or contact: sevim_cengiz@icloud.com
+- If you support or contribute the code, most welcome to Oryx-MRSI Github Repository.
 
 # Licencing
 - Apache-2.0 License
