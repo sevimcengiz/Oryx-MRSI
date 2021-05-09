@@ -126,6 +126,6 @@ Should you publish material that made use of Oryx-MRSI, please cite the followin
 - Oryx-MRSI uses some functions written by [Jamie Near](https://www.mcgill.ca/psychiatry/jamie-near) (McGill University)
 - Oryx-MRSI uses some functions written by [H.Ratiney](https://www.creatis.insa-lyon.fr/site7/en/users/ratiney) (CREATIS-LRMN) 
 - Oryx-MRSI uses Schaefer2018_100/400Parcels_7Networks_order_FSLMNI152_2mm.nii. See Github [link](https://github.com/ThomasYeoLab/Standalone_CBIG_fMRI_Preproc2016), for [license](https://github.com/ThomasYeoLab/Standalone_CBIG_fMRI_Preproc2016/blob/master/LICENSE.md).
-- Oryx-MRSI uses MNI152_T1_2mm_brain.nii.gz, MNI-maxprob-thr0/25/50-2mm.nii.gz acquired from [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases), for [licence](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/License). 
+- Oryx-MRSI uses MNI152_T1_2mm_brain.nii.gz, MNI-maxprob-thr0/25/50-2mm.nii.gz acquired from [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases), for [license](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/License). 
 - If there is any function that I forget to mention about name/link/citation, please let me know.
 
