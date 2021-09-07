@@ -55,12 +55,7 @@ for n=1:numel(Metname)
                 if AllNumStd(n,isli,irow,icol)>cutoff_crlb
                     includedvoxels(n,isli,irow,icol)=0;
                 end
-                
-                if AllNumStd(Naa_no,isli,irow,icol)>cutoff_crlb & (AllNumStd(Lip13comp_no,isli,irow,icol)<cutoff_crlb  | AllNumStd(Lip13a_no,isli,irow,icol)<cutoff_crlb | AllNumStd(Lip13b_no,isli,irow,icol)<cutoff_crlb)
-                    
-                    includedvoxels(n,isli,irow,icol)=0;
-                end
-                
+                              
             end
         end
     end
