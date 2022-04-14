@@ -4,7 +4,7 @@
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/sevimcengiz)
 # Oryx-MRSI
 <img src="https://user-images.githubusercontent.com/5468765/108315274-9c0c7680-71d4-11eb-9040-7e6248ea55b8.png" width="100" height="100">
-Oryx-MRSI is a fully automated and complementary software for a comprehensive multi-slice proton magnetic resonance spectroscopic imaging (1H-MRSI) data analysis. It includes multi-slice MRSI raw data and LCModel .coord file output visualizations, tissue fraction calculation, chemical shift correction, metabolite maps generation, registration onto MNI152 brain atlas, and atlas-based ROI analysis.
+Oryx-MRSI is a fully automated and complementary software for a comprehensive multi-slice proton magnetic resonance spectroscopic imaging (1H-MRSI) data analysis. It includes multi-slice MRSI raw data and LCModel .coord file output visualizations, tissue fraction calculation, chemical shift correction, metabolite maps generation, registration onto MNI152 brain atlas,atlas-based ROI analysis, and distributions.
 
 # Features
 - ```Main Page``` The user needs to provide parameters for the multi-slice 1H-MRSI data.
@@ -28,15 +28,15 @@ Oryx-MRSI is a fully automated and complementary software for a comprehensive mu
    
    i. Reference metabolite
 
-- ```Load Data``` Reads the raw 1H-MRSI data and LCModel .coord otput files for raw data and Coord file visualization of spectra.
+- ```Load Data``` Reads the raw 1H-MRSI data (Spar or MRS-NIfTI format) and LCModel .coord otput files for raw data and Coord file visualization of spectra.
 
 - ```Co-registration``` Coregisters FOV,Press-Box(VOI), all voxels of spectra considering chemical shift correction if chemical shift correction is 'On'.
 
 - ```Segmentation``` Calculation of WM, GM, CSF fractions in each voxel of all metabolites considering chemical shift correction. 
 
-- ```FWHM-SNR``` Visualization of FWHM and SNR values for all voxels.
+- ```CRLB-FWHM-SNR``` Visualization of CRLB, FWHM and SNR values.
 
-- ```Spectral Quality``` Visualization of included voxels into the 1H-MRSI data analysis after exclusion criteria values considering FWHM, SNR, CRLB, and fCSF. 
+- ```Spectral Quality``` Visualization of included voxels into the 1H-MRSI data analysis after exclusion criteria values considering FWHM, SNR, CRLB, and fCSF. It also enables manual exclusion/includion.
 
 - ```Metabolite Map``` All metabolite results are used to create metabolite maps including: 
   - concentration map,
@@ -49,7 +49,7 @@ Oryx-MRSI is a fully automated and complementary software for a comprehensive mu
 - ```Registration``` Generates MNI152 brain atlas-Registered metabolite maps including the outputs created in the previous module.
 
 - ```ROI Analysis``` Region of interest (ROI) analysis at multiple brain atlases like [Schafer2018 100/400 Parcels on 7 resting-state (rs-fMRI) networks](https://pubmed.ncbi.nlm.nih.gov/28981612/) or [MNI thr 0/25/50 brain regions](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases). 
-
+- ```Distributions``` The box-plot visualization of specta at the selected brain region.
 
 # Prerequirements
 - [MATLAB R2020b](https://www.fil.ion.ucl.ac.uk/spm/software/download/)
@@ -90,8 +90,11 @@ If you get an error, plese check these:
     
    If you use ```LINUX```, check [this link](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation/Linux) (Using FSL from MATLAB)
 
-# How to get started and User Documentation
-[Oryx-MRSI Documentation](https://sevimcengiz.github.io/oryx/)
+# How to get started and User Documentation and YouTube links
+- [Oryx-MRSI Documentation](https://sevimcengiz.github.io/oryx/)
+
+- [YouTube videos](https://www.youtube.com/channel/UCopJKJyorr-HztT-xGIe7iQ)
+
 
 # Developers
 
@@ -108,7 +111,7 @@ Should you publish material that made use of Oryx-MRSI, please cite the followin
 **Cengiz S, Yildirim M, Bas A, Ozturk-Isik E. ORYX-MRSI: A data analysis software for multi-slice 1H-MRSI. International Society for Magnetic Resonance in Medicine. Virtual Meeting, May 15-20, 2021. (Digital Poster)**
 
 # Release
-- Version 1.0
+- Version 1.1
 
 # Help and Support
 - There isn't known any bug or issue up to now. 
