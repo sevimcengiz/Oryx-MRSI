@@ -8,9 +8,17 @@
 % Contact: sevim_cengiz@icloud.com
 
 
-function [NumStd,Conc]=LCModelMap(tableinfo)
+function [NumStd,Conc]=LCModelMap(tableinfo,newmap,newmapname,newmapppm)
+
+%T1segmentation(Pinfo);
+
+switch newmap
+    case'Above-mentioned maps'
 
 Metname={'Cr+PCr' 'Glu+Gln' 'GPC+PCh' 'Ins' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG'};
+    otherwise
+Metname={'Cr+PCr' 'Glu+Gln' 'GPC+PCh' 'Ins' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG' newmapname};
+end
 
 for noMet=1:numel(Metname)
     tableidx=find(ismember(tableinfo,Metname{1,noMet})==1);

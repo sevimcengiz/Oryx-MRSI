@@ -42,7 +42,7 @@ for volno=1:numel(vol_list)
         region(find(region~=i))=0;
         region(find(region>0))=1;
         ROI=double(Volume.img).*double(region);
-        ROI=ROI(find(ROI>0));
+        ROI=ROI(find(ROI>0)); %Boxplot of theseee
        if length(ROI)>(floor(length(region(find(region>0))).*(exclusionval/100)))
             
             patient_mean=mean(ROI);

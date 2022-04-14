@@ -145,7 +145,7 @@ V_mask.dim=V.dim;
 V_mask.dt=V.dt;
 V_mask.mat=V.mat;
 
-%  V_mask=spm_write_vol(V_mask,mask);  % uncomment if you want to save
+% V_mask=spm_write_vol(V_mask,mask);  % uncomment if you want to save
 % little voxels
 
 Pinfo.metab(met).littlevoxels(sli,row,col).name=littleFOVMask_file;

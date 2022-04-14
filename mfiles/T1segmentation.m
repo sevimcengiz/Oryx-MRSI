@@ -13,5 +13,5 @@ if  isfile(segfile)
 else
     sprintf('FSL Fast is running for segmentation')
     T1nii=[Pinfo.mainpath,'exam_1', filesep, 'images', filesep,'T1',filesep,'nifti',filesep,Pinfo.name,'_Bet.nii.gz'];
-    system(['fast ',T1nii]);
+    system(['fast ',T1nii]); %instead of onlt fast
 end

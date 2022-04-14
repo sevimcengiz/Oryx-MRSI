@@ -18,7 +18,7 @@
 % Please verify the directions of the the chemical shifts on your system.
 
 % Authors: Sevim Cengiz & Esin Ozturk Isik & Muhammed Yildirim, Bogazici University , 2020
-function [chem_shift_ex,chem_shift_echo,chem_shift_echo2]=Chem_Shift_calculation(shifted_met_ppm,GR_ex,GR_echo,GR_echo2,ReferenceMetabolite2)
+function [chem_shift_ex,chem_shift_echo,chem_shift_echo2]=Chem_Shift_calculation(shifted_met_ppm,GR_ex,GR_echo,GR_echo2,ReferenceMetabolite2,userrefmetppm)
  
 GAMMA_1H = 42577.46778;
 Resonance_fq = 127732403;
@@ -32,8 +32,10 @@ switch ReferenceMetabolite2
         ref_met_ppm=3.03; % Cr ppm
     case 'Cho'
         ref_met_ppm=3.2; % Cho ppm
-    otherwise % 'LacLip'
+    case 'LacLip'
         ref_met_ppm=1.3; % Lac/Lip ppm
+    otherwise
+        ref_met_ppm=userrefmetppm;
 end
 
 delta_ppm= (shifted_met_ppm - ref_met_ppm);

@@ -7,14 +7,20 @@
 % fraction value of CSF.
 % Author: Sevim Cengiz,  Bogazici University , 2020
 % Contact: sevim_cengiz@icloud.com
-function corrected_conc_maps_to_ratio_maps(Pinfo)
+function corrected_conc_maps_to_ratio_maps(Pinfo,app)
 
 out_MetMaps=[Pinfo.spectrapath,filesep,'nifti',filesep,'corrected_conc_maps',filesep];
 folder=dir([out_MetMaps,Pinfo.sparname,'*.nii']);
 
 %% Metabolite / Cr+PCr volume generation
-
 Metname={'Glu+Gln' 'GPC+PCh' 'Ins' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG'};
+            switch app.MetaboliteMapListppmButtonGroup.SelectedObject.Text
+                case 'Pre-defined maps (Above)'
+                    Metname={'Glu+Gln' 'GPC+PCh' 'Ins' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG'};
+
+                otherwise
+                    Metname={'Glu+Gln' 'GPC+PCh' 'Ins' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG' app.userdefmapname.Value};
+            end
 
 for n=1:numel(Metname)
     Metabolites(n).no=n;
@@ -63,6 +69,13 @@ end
 
 
 Metname2={'Cr+PCr' 'Glu+Gln' 'GPC+PCh' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG'};
+
+            switch app.MetaboliteMapListppmButtonGroup.SelectedObject.Text
+                case 'Pre-defined maps (Above)'
+                    Metname2={'Cr+PCr' 'Glu+Gln' 'GPC+PCh' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG'};
+                otherwise
+                    Metname2={'Cr+PCr' 'Glu+Gln' 'GPC+PCh' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG' app.userdefmapname.Value};      
+            end
 
 
 for n=1:numel(Metname2)

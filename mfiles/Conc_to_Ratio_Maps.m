@@ -1,4 +1,4 @@
-%% This function generates Cconcentration to ratio Maps od all metabolites. 
+%% This function generates Cconcentration to ratio Maps of all metabolites. 
 % Inputs: P info struct, All concentration values parsed from LCModel
 % output file, coregistration path, metqbolites, included voxels after spectral quality module. 
 % Author: Sevim Cengiz,  Bogazici University , 2020

@@ -11,13 +11,20 @@
 % Contact: sevim_cengiz@icloud.com
 
 
-
-function [Pinfo, AlFWHM, AlSNR, AllNumStd, AllConc]=GUI_seg(UIFigure,Metabolites,Pinfo, chem_shift_ex, chem_shift_echo, chem_shift_echo2,ChemicalshiftcorrectionButtonGroup_SelectedObject_Text,MRSIacquiredafterButtonGroup_SelectedObject_Text,litoutpath,RFOV_dir)
+function [Pinfo, AlFWHM, AlSNR, AllNumStd, AllConc]=GUI_seg(UIFigure,Metabolites,Pinfo, chem_shift_ex, chem_shift_echo, chem_shift_echo2,ChemicalshiftcorrectionButtonGroup_SelectedObject_Text,MRSIacquiredafterButtonGroup_SelectedObject_Text,litoutpath,RFOV_dir,newmap,newmapname,newmapppm)
 wait=uiprogressdlg(UIFigure,'Message','This process will take some time (~30 min).','Title','Segmentation');
 
 T1segmentation(Pinfo);
 
+switch newmap
+    case'Above-mentioned maps'
+
 Metname={'Cr+PCr' 'Glu+Gln' 'GPC+PCh' 'Ins' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG'};
+    otherwise
+Metname={'Cr+PCr' 'Glu+Gln' 'GPC+PCh' 'Ins' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG' newmapname};
+end
+
+
 name=[Pinfo.coordpath,Pinfo.sparname];   %% for LCModel output read and Concentration map generation
 n=1;
 counter=1;
@@ -37,9 +44,7 @@ switch MRSIacquiredafterButtonGroup_SelectedObject_Text
         
         %Volume fraction calculation at each slice, row and column of all
         %metabolites. (Due to the chemical shift correction, each metabolite has different FOX box and little voxels locations.)
-        
-        
-        
+
         for k=1:numel(Metabolites)
             
             [sli row col]=size(Pinfo.littlevoxels);
@@ -73,7 +78,7 @@ switch MRSIacquiredafterButtonGroup_SelectedObject_Text
                         
                         if exist(tablename,'file')
                             tableinfo=textread(tablename,'%s');
-                            [NumStd,Conc]=LCModelMap(tableinfo);
+                            [NumStd,Conc]=LCModelMap(tableinfo,newmap,newmapname,newmapppm);
                             AllNumStd(:,isli,irow,icol)=NumStd;
                             AllConc(:,isli,irow,icol)=Conc;
                             [FWHM,SNR]=LCMout_info(tableinfo);
@@ -151,7 +156,7 @@ switch MRSIacquiredafterButtonGroup_SelectedObject_Text
                         
                         if exist(tablename,'file')
                             tableinfo=textread(tablename,'%s');
-                            [NumStd,Conc]=LCModelMap(tableinfo);
+                            [NumStd,Conc]=LCModelMap(tableinfo,newmap,newmapname,newmapppm);
                             AllNumStd(:,isli,irow,icol)=NumStd;
                             AllConc(:,isli,irow,icol)=Conc;
                             [FWHM,SNR]=LCMout_info(tableinfo);

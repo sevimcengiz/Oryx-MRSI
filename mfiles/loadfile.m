@@ -39,9 +39,10 @@
 function [Pinfo]= loadfile(filename,pathname)
 
 [fpath,fname,extfile] = fileparts([pathname,filename]);
+
+Pinfo.ext='spar';
 sparfilepath=[fpath,filesep,fname];
 coordfilespath= [fpath,filesep,'lcmodel_outputs',filesep,fname,filesep];
-
 Pinfo.sparname=fname;
 Pinfo.coordpath=coordfilespath;
 Pinfo.spectrapath=fpath;
@@ -188,5 +189,7 @@ else
         end
     end
 end
+
+
 
 end
