@@ -108,7 +108,7 @@ Esin Ozturk Isik
 
 Should you publish material that made use of Oryx-MRSI, please cite the following publication:
 
-**Cengiz S, Yildirim M,Bas A, Ozturk-Isik E. ORYX-MRSI: Afully-automated open-source software for protonmagnetic resonance spectroscopic imaging dataanalysis.Int J Imaging Syst Technol. 2022;1‐16.doi:10.1002/ima.2274816**
+**Cengiz S, Yildirim M,Bas A, Ozturk-Isik E. ORYX-MRSI: A fully-automated open-source software for proton magnetic resonance spectroscopic imaging data analysis. Int J Imaging Syst Technol. 2022;1‐16.[doi:10.1002/ima.22748](https://doi.org/10.1002/ima.22748) **
 
 # Release
 - Version 1.1
