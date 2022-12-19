@@ -969,11 +969,18 @@ classdef Oryx < matlab.apps.AppBase
                         app.Pinfo.MRI= [app.Pinfo.mainpath,'exam_1',filesep,'images',filesep,'T2',filesep,'nifti',filesep,app.Pinfo.name,'_Bet.nii.gz'];
                 end
 
+    %newly added for corre.
+
+        MRIFOVMask_file=[app.coreg_path,filesep,app.Pinfo.sparname,'_FOV_mask.nii'];
+        [app.Pinfo] = Mask_FOV_run_Pinfo(app.Pinfo,MRIFOVMask_file,app.RFOV_dir);
+%%
+
+
                 for k=1:numel(app.Metabolites)
 
                     wait.Value=(k/numel(app.Metabolites))-0.1;
 
-                    MRIFOVMask_file=[app.coreg_path,filesep,app.Pinfo.sparname,'_',app.Metabolites(k).name,'_FOV_mask.nii'];
+                    %MRIFOVMask_file=[app.coreg_path,filesep,app.Pinfo.sparname,'_',app.Metabolites(k).name,'_FOV_mask.nii'];
                     MRIpressMask_file=[app.coreg_path,filesep,app.Pinfo.sparname,'_',app.Metabolites(k).name,'_PressBox_mask.nii'];
 
                     switch app.ChemicalshiftcorrectionButtonGroup.SelectedObject.Text
@@ -981,13 +988,12 @@ classdef Oryx < matlab.apps.AppBase
                             Chem_Shift_Dir_mat=find_chem_shift_directions(app.RFOV_dir, app.chem_shift_dir_AP, app.chem_shift_dir_LR, app.chem_shift_dir_FH);
                             [GR_ex, GR_echo,GR_echo2]=gradient_strength_calc(app.Pinfo.apVOI,app.Pinfo.lrVOI,app.Pinfo.ccVOI,Chem_Shift_Dir_mat,app.RFexBWEditField.Value,app.RFechoBWEditField.Value,app.RFecho2BWEditField.Value);
                             [app.chem_shift_ex(k).no,app.chem_shift_echo(k).no,app.chem_shift_echo2(k).no]=Chem_Shift_calculation(app.Metabolites(k).ppm,GR_ex,GR_echo,GR_echo2,app.ReferenceMetabolite.SelectedObject.Text,app.userrefmetppm);
-                            [app.Pinfo] = Mask_FOV_run_Pinfo(app.Pinfo,k,MRIFOVMask_file,app.chem_shift_ex(k).no,app.chem_shift_echo(k).no,app.chem_shift_echo2(k).no,app.RFOV_dir);
                             [app.Pinfo] = Mask_Press_run_Pinfo(app.Pinfo,k,MRIpressMask_file,app.chem_shift_ex(k).no,app.chem_shift_echo(k).no,app.chem_shift_echo2(k).no,app.RFOV_dir);
                         otherwise
                             app.chem_shift_ex(k).no=0;
                             app.chem_shift_echo(k).no=0;
                             app.chem_shift_echo2(k).no=0;
-                            [app.Pinfo] = Mask_FOV_run_Pinfo(app.Pinfo,k,MRIFOVMask_file,app.chem_shift_ex(k).no,app.chem_shift_echo(k).no,app.chem_shift_echo2(k).no,app.RFOV_dir);
+                            %[app.Pinfo] = Mask_FOV_run_Pinfo(app.Pinfo,k,MRIFOVMask_file,app.chem_shift_ex(k).no,app.chem_shift_echo(k).no,app.chem_shift_echo2(k).no,app.RFOV_dir);
                             [app.Pinfo] = Mask_Press_run_Pinfo(app.Pinfo,k,MRIpressMask_file,app.chem_shift_ex(k).no,app.chem_shift_echo(k).no,app.chem_shift_echo2(k).no,app.RFOV_dir);
                     end
                 end
@@ -997,8 +1003,8 @@ classdef Oryx < matlab.apps.AppBase
                 app.coreg_status=1;
             end
 
-            A= app.Pinfo.FOVimg(app.Metabolites(1).no).fig; %Cr
-            B= app.Pinfo.FOVimg(app.Metabolites(5).no).fig; %Lac
+            A= app.Pinfo.VOIimg(app.Metabolites(1).no).fig; %Cr
+            B= app.Pinfo.VOIimg(app.Metabolites(5).no).fig; %Lac
             C=app.Pinfo.refimg.fig;
 
             app.Fused_cr=imfuse(A,C);
@@ -1021,7 +1027,7 @@ classdef Oryx < matlab.apps.AppBase
             xticks(ax,[]);
             yticks(ax,[]);
 
-            ax.Title.String=([app.Metabolites(1).name,' FOV box']);
+            ax.Title.String=([app.Metabolites(1).name,' VOI box']);
             pos=get(ax,'Position');
             set (ax,'Position',[pos(1)+pos(3)/4 pos(2) pos(3)/2 pos(4)]);
             %axis image;
@@ -1030,7 +1036,7 @@ classdef Oryx < matlab.apps.AppBase
             colormap(ax,"gray");
             xticks(ax,[]);
             yticks(ax,[]);
-            ax.Title.String=([app.Metabolites(5).name,' FOV box']);
+            ax.Title.String=([app.Metabolites(5).name,' VOI box']);
             pos=get(ax,'Position');
             set (ax,'Position',[pos(1)+pos(3)/4 pos(2) pos(3)/2 pos(4)]);
             %axis image;
@@ -1039,7 +1045,7 @@ classdef Oryx < matlab.apps.AppBase
             colormap(ax,"gray");
             xticks(ax,[]);
             yticks(ax,[]);
-            ax.Title.String=([app.Metabolites(1).name,' FOV box & ',app.Metabolites(5).name,' FOV box']);
+            ax.Title.String=([app.Metabolites(1).name,' VOI box & ',app.Metabolites(5).name,' VOI box']);
             pos=get(ax,'Position');
             set (ax,'Position',[pos(1)+pos(3)/4 pos(2) pos(3)/2 pos(4)]);
             %axis image;
@@ -1092,7 +1098,7 @@ classdef Oryx < matlab.apps.AppBase
             app.SliceNumberLabel.Visible='off';
             app.WhichMetaboliteButtonGroup.Visible='on';
             app.SliceNumberLabel.Visible='on';
-            app.WhichMetaboliteButtonGroup.Visible='on';
+            app.WhichMetaboliteButtonGroup.Visible='off'; %newly added
 
             %%%% Coreg of Little Voxels and calculation of fractions including CSF, WM and GM of these little voxels.
             litoutpath=[app.Pinfo.spectrapath,filesep,'nifti',filesep,'binary_mask_littlevoxels'];
@@ -1133,11 +1139,11 @@ classdef Oryx < matlab.apps.AppBase
             Map_fwm_Generation(app.Pinfo,app.fwm,app.coreg_path,app.Metabolites);
             %%%% Figure adjust
             fwmout_mask=[app.Pinfo.spectrapath,filesep,'nifti',filesep,'fwm_maps'];
-            fwmMask=niftiread([fwmout_mask,filesep,app.Pinfo.sparname,'_',button{1,1},'_fwm.nii']);
+            fwmMask=niftiread([fwmout_mask,filesep,app.Pinfo.sparname,'_fwm.nii']);
             fgmout_mask=[app.Pinfo.spectrapath,filesep,'nifti',filesep,'fgm_maps'];
-            fgmMask=niftiread([fgmout_mask,filesep,app.Pinfo.sparname,'_',button{1,1},'_fgm.nii']);
+            fgmMask=niftiread([fgmout_mask,filesep,app.Pinfo.sparname,'_fgm.nii']);
             fcsfout_mask=[app.Pinfo.spectrapath,filesep,'nifti',filesep,'fcsf_maps'];
-            fcsfMask=niftiread([fcsfout_mask,filesep,app.Pinfo.sparname,'_',button{1,1},'_fcsf.nii']);
+            fcsfMask=niftiread([fcsfout_mask,filesep,app.Pinfo.sparname,'_fcsf.nii']);
 
             %
 
@@ -1273,7 +1279,7 @@ classdef Oryx < matlab.apps.AppBase
           %  if            app.currentmodule<2
                 Conc_SNR_Generation(app.Pinfo,app.AllSNR,app.coreg_path,app.Metabolites); %% revision SNR view
                 Conc_FWHM_Generation(app.Pinfo,app.AllFWHM,app.coreg_path,app.Metabolites); %% revision FWHM view
-                Conc_CRLB_Generation(app.Pinfo,app.AllNumStd,app.coreg_path,app.Metabolites);
+                Conc_CRLB_Generation(app.Pinfo,app.AllNumStd,app.coreg_path,app.Metabolites,app.ReferenceMetabolite.SelectedObject.Text);
            % end
 
             snrout_mask=[app.Pinfo.spectrapath,filesep,'nifti',filesep,'SNR_maps'];
