@@ -233,10 +233,10 @@ classdef Oryx < matlab.apps.AppBase
         fit;
         coord_filename;
         ReferenceMetabolite2='';
-        RFOV_dir='';
-        chem_shift_dir_AP='';
-        chem_shift_dir_LR='';
-        chem_shift_dir_FH='';
+        RFOV_dir='RL'; %Jan 19, 2024
+        chem_shift_dir_AP='A'; %Jan 19, 2024
+        chem_shift_dir_LR='L'; %Jan 19, 2024
+        chem_shift_dir_FH='F'; %Jan 19, 2024
         refppm='';
         backtrig='0';
         ext='';
@@ -939,14 +939,16 @@ classdef Oryx < matlab.apps.AppBase
             app.VisualizationoptionButtonGroup.Visible='off';
 
             switch app.MetaboliteMapListppmButtonGroup.SelectedObject.Text
-                case 'Pre-defined maps (Above)'
-                    app.Metname={'Cr+PCr' 'Glu+Gln' 'GPC+PCh' 'Ins' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG'};
-                    shiftedppm=[3.03 2.25 3.2 3.52 1.3 1.3 1.3 1.3 2.02 ];
-                    set(app.UserdefinedmetaboliteButton,'Enable','off');
-                otherwise
+                case 'User defined map'
                     app.Metname={'Cr+PCr' 'Glu+Gln' 'GPC+PCh' 'Ins' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG' app.userdefmapname.Value};
                     shiftedppm=[3.03 2.25 3.2 3.52 1.3 1.3 1.3 1.3 2.02 app.userdefmapppm.Value];
                     set(app.UserdefinedmetaboliteButton,'Enable','on');
+
+                otherwise %'Pre-defined maps (Above)'
+                    app.Metname={'Cr+PCr' 'Glu+Gln' 'GPC+PCh' 'Ins' 'Lac' 'Lip13a' 'Lip13b' 'Lip13a+Lip13b' 'NAA+NAAG'};
+                    shiftedppm=[3.03 2.25 3.2 3.52 1.3 1.3 1.3 1.3 2.02 ];
+                    set(app.UserdefinedmetaboliteButton,'Enable','off');
+
             end
 
             for n=1:numel(app.Metname)
@@ -973,6 +975,8 @@ classdef Oryx < matlab.apps.AppBase
 
         MRIFOVMask_file=[app.coreg_path,filesep,app.Pinfo.sparname,'_FOV_mask.nii'];
         [app.Pinfo] = Mask_FOV_run_Pinfo(app.Pinfo,MRIFOVMask_file,app.RFOV_dir);
+      
+        
 %%
 
 
@@ -1003,8 +1007,8 @@ classdef Oryx < matlab.apps.AppBase
                 app.coreg_status=1;
             end
 
-            A= app.Pinfo.VOIimg(app.Metabolites(1).no).fig; %Cr
-            B= app.Pinfo.VOIimg(app.Metabolites(5).no).fig; %Lac
+            A= app.Pinfo.VOIimg(app.Metabolites(1).no).fig; %Cr, 
+            B= app.Pinfo.VOIimg(app.Metabolites(5).no).fig; %Lac,  
             C=app.Pinfo.refimg.fig;
 
             app.Fused_cr=imfuse(A,C);
@@ -1139,19 +1143,19 @@ classdef Oryx < matlab.apps.AppBase
             Map_fwm_Generation(app.Pinfo,app.fwm,app.coreg_path,app.Metabolites);
             %%%% Figure adjust
             fwmout_mask=[app.Pinfo.spectrapath,filesep,'nifti',filesep,'fwm_maps'];
-            fwmMask=niftiread([fwmout_mask,filesep,app.Pinfo.sparname,'_fwm.nii']);
+            fwmMask=niftiread([fwmout_mask,filesep,app.Pinfo.sparname,'_NAA+NAAG_fwm.nii']);
             fgmout_mask=[app.Pinfo.spectrapath,filesep,'nifti',filesep,'fgm_maps'];
-            fgmMask=niftiread([fgmout_mask,filesep,app.Pinfo.sparname,'_fgm.nii']);
+            fgmMask=niftiread([fgmout_mask,filesep,app.Pinfo.sparname,'_NAA+NAAG_fgm.nii']);
             fcsfout_mask=[app.Pinfo.spectrapath,filesep,'nifti',filesep,'fcsf_maps'];
-            fcsfMask=niftiread([fcsfout_mask,filesep,app.Pinfo.sparname,'_fcsf.nii']);
+            fcsfMask=niftiread([fcsfout_mask,filesep,app.Pinfo.sparname,'_NAA+NAAG_fcsf.nii']);
 
             %
+             % 
+             % fwmMask=niftiread('/Users/sevim/Downloads/Oryx-SC_jan19/Oryx-MRSI-main/Dataset/K_01/exam_1/spectra/nifti/fwm_maps/K_01_press_1_raw_act_NAA+NAAG_fwm.nii');
+             %             fgmMask=niftiread('/Users/sevim/Downloads/Oryx-SC_jan19/Oryx-MRSI-main/Dataset/K_01/exam_1/spectra/nifti/fgm_maps/K_01_press_1_raw_act_NAA+NAAG_fgm.nii');
+             %              fcsfMask=niftiread('/Users/sevim/Downloads/Oryx-SC_jan19/Oryx-MRSI-main/Dataset/K_01/exam_1/spectra/nifti/fcsf_maps/K_01_press_1_raw_act_NAA+NAAG_fcsf.nii');
 
-            %  fwmMask=niftiread('/Users/sevim/Documents/Oryx-MRSI-Revision/Dataset/K_01/exam_1/spectra/nifti/fwm_maps/K_01_press_1_raw_act_NAA+NAAG_fwm.nii');
-            %              fgmMask=niftiread('/Users/sevim/Documents/Oryx-MRSI-Revision/Dataset/K_01/exam_1/spectra/nifti/fgm_maps/K_01_press_1_raw_act_NAA+NAAG_fgm.nii');
-            %               fcsfMask=niftiread('/Users/sevim/Documents/Oryx-MRSI-Revision/Dataset/K_01/exam_1/spectra/nifti/fcsf_maps/K_01_press_1_raw_act_NAA+NAAG_fcsf.nii');
-            %
-            %
+
 
 
             app.Panel.AutoResizeChildren='off';

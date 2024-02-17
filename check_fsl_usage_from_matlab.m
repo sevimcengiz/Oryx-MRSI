@@ -12,8 +12,12 @@ currentFolder = pwd;
 datapath=[currentFolder, filesep, 'Dataset',filesep,'K_01',filesep,'exam_1',filesep,'images',filesep,'T1', filesep,'nifti',filesep,'K_01.nii.gz'];
 outputpath=[currentFolder, filesep, 'Dataset',filesep,'K_01',filesep,'exam_1',filesep,'images',filesep,'T1', filesep,'nifti',filesep,'K_01_Bet.nii.gz'];
 sprintf('FSL usage from matlab is checking by using FSL BET');
+
+fsldir = getenv('FSLDIR');
+addpath(genpath(fsldir))
+sprintf(fsldir)
 system(['bet ',datapath,' ',outputpath,' -m -f 0.35']);
-sprintf('FSL usage from matlab is working.');
+sprintf('FSL usage from matlab is working.')
 
 end
 

@@ -10,10 +10,11 @@ function Conc_FWHM_Generation(Pinfo,AllFWHM,coreg_path,Metabolites)
 fcsf=Pinfo.frac_CSF;
 litvox_pixloc=Pinfo.metab;
 metno=size(Metabolites);
-n=1;
+n=9;
     includedvoxels=ones(1,sli,row,col);
- MRIFOVMask_file=load_untouch_nii([coreg_path,filesep,Pinfo.sparname,'_',Metabolites(n).name,'_FOV_mask.nii']);
- im_size=size(MRIFOVMask_file.img);
+% MRIFOVMask_file=load_untouch_nii([coreg_path,filesep,Pinfo.sparname,'_',Metabolites(n).name,'_FOV_mask.nii']);
+ MRIFOVMask_file=load_untouch_nii([coreg_path,filesep,Pinfo.sparname,'_FOV_mask.nii']); 
+im_size=size(MRIFOVMask_file.img);
  MRIFOVMask_file.img=zeros(im_size);
  MRIpressMask_file=load_untouch_nii([coreg_path,filesep,Pinfo.sparname,'_',Metabolites(n).name,'_PressBox_mask.nii']);
  

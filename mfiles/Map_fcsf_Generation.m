@@ -12,7 +12,8 @@ litvox_pixloc=Pinfo.metab;
 metno=size(Metabolites);
 for n=1:metno(1,2)
     
- MRIFOVMask_file=load_untouch_nii([coreg_path,filesep,Pinfo.sparname,'_',Metabolites(n).name,'_FOV_mask.nii']);
+ %MRIFOVMask_file=load_untouch_nii([coreg_path,filesep,Pinfo.sparname,'_',Metabolites(n).name,'_FOV_mask.nii']);
+ MRIFOVMask_file=load_untouch_nii([coreg_path,filesep,Pinfo.sparname,'_FOV_mask.nii']);
  im_size=size(MRIFOVMask_file.img);
  MRIFOVMask_file.img=zeros(im_size);
  MRIpressMask_file=load_untouch_nii([coreg_path,filesep,Pinfo.sparname,'_',Metabolites(n).name,'_PressBox_mask.nii']);
@@ -33,7 +34,7 @@ for n=1:metno(1,2)
                         lx=locations(1,1);
                         ly=locations(1,2);
                         lz=locations(1,3);
-                        MRIFOVMask_file.img(lx,ly,lz)=fcsf(n,isli,irow,icol);
+                        MRIFOVMask_file.img(lx,ly,lz)=fcsf(1,isli,irow,icol);
                     end
                     
                 end
